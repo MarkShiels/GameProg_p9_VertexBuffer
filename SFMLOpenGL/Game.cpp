@@ -38,9 +38,8 @@ typedef struct
 	float color[3];
 } Vertex;
 
-//Vertex vertex[6];
-GLubyte triangles[6];
-Vector3 vertices[12];
+Vertex vertex[12];
+GLubyte triangles[12];
 
 /* Variable to hold the VBO identifier */
 GLuint vbo[1];
@@ -54,56 +53,7 @@ void Game::initialize()
 
 	/* Vertices counter-clockwise winding */
 
-	vertices[0].m_x = -0.5f;
-	vertices[0].m_y= -0.5f;
-	vertices[0].m_z = 0.0f;
-
-	vertices[2].m_x = -0.5f;
-	vertices[2].m_y = 0.5f;
-	vertices[2].m_z = 0.0f;
-
-	vertices[4].m_x = 0.5f;
-	vertices[4].m_y = 0.5f;
-	vertices[4].m_z = 0.0f;
-
-	vertices[6].m_x = 0.5f; 
-	vertices[6].m_y = 0.5f;  
-	vertices[6].m_z = 0.0f;
-
-	vertices[8].m_x = 0.5f; 
-	vertices[8].m_y = -0.5f;  
-	vertices[8].m_z = 0.0f;
-
-	vertices[10].m_x = -0.5f; 
-	vertices[10].m_y = -0.5f;  
-	vertices[10].m_z = 0.0f;
-
-	vertices[1].m_x = 0.0f;
-	vertices[1].m_y = 1.0f;
-	vertices[1].m_z = 0.0f;
-
-	vertices[3].m_x = 0.0f;
-	vertices[3].m_y = 1.0f;
-	vertices[3].m_z = 0.0f;
-
-	vertices[5].m_x = 0.0f;
-	vertices[5].m_y = 1.0f;
-	vertices[5].m_z = 0.0f;
-
-	vertices[7].m_x = 0.0f;
-	vertices[7].m_y = 1.0f;
-	vertices[7].m_z = 0.0f;
-
-	vertices[9].m_x = 0.0f;
-	vertices[9].m_y = 1.0f;
-	vertices[9].m_z = 0.0f;
-
-	vertices[11].m_x = 0.0f;
-	vertices[11].m_y = 1.0f;
-	vertices[11].m_z = 0.0f;
-
-
-	/*vertex[0].coordinate[0] = -0.5f;
+	vertex[0].coordinate[0] = -0.5f;
 	vertex[0].coordinate[1] = -0.5f;
 	vertex[0].coordinate[2] = 0.0f;
 
@@ -113,21 +63,45 @@ void Game::initialize()
 
 	vertex[2].coordinate[0] = 0.5f;
 	vertex[2].coordinate[1] = 0.5f;
-	vertex[2].coordinate[2] = 0.0f;*/
+	vertex[2].coordinate[2] = 0.0f;
 
-	//vertex[3].coordinate[0] = 0.5f; 
-	//vertex[3].coordinate[1] = 0.5f;  
-	//vertex[3].coordinate[2] = 0.0f;
+	vertex[3].coordinate[0] = 0.5f; 
+	vertex[3].coordinate[1] = 0.5f;  
+	vertex[3].coordinate[2] = 0.0f;
 
-	//vertex[4].coordinate[0] = 0.5f; 
-	//vertex[4].coordinate[1] = -0.5f;  
-	//vertex[4].coordinate[2] = 0.0f;
+	vertex[4].coordinate[0] = 0.5f; 
+	vertex[4].coordinate[1] = -0.5f;  
+	vertex[4].coordinate[2] = 0.0f;
 
-	//vertex[5].coordinate[0] = -0.5f; 
-	//vertex[5].coordinate[1] = -0.5f;  
-	//vertex[5].coordinate[2] = 0.0f;
+	vertex[5].coordinate[0] = -0.5f; 
+	vertex[5].coordinate[1] = -0.5f;  
+	vertex[5].coordinate[2] = 0.0f;
 
-	/*vertex[0].color[0] = 0.1f;
+	vertex[6].coordinate[0] = -0.5f;
+	vertex[6].coordinate[1] = -0.5f;
+	vertex[6].coordinate[2] = 0.0f;
+
+	vertex[7].coordinate[0] = -0.5f;
+	vertex[7].coordinate[1] = 0.5f;
+	vertex[7].coordinate[2] = 0.0f;
+
+	vertex[8].coordinate[0] = 0.5f;
+	vertex[8].coordinate[1] = 0.5f;
+	vertex[8].coordinate[2] = 0.0f;
+
+	vertex[9].coordinate[0] = 0.5f;
+	vertex[9].coordinate[1] = 0.5f;
+	vertex[9].coordinate[2] = 0.0f;
+
+	vertex[10].coordinate[0] = 0.5f;
+	vertex[10].coordinate[1] = -0.5f;
+	vertex[10].coordinate[2] = 0.0f;
+
+	vertex[11].coordinate[0] = -0.5f;
+	vertex[11].coordinate[1] = -0.5f;
+	vertex[11].coordinate[2] = 0.0f;
+
+	vertex[0].color[0] = 0.1f;
 	vertex[0].color[1] = 1.0f;
 	vertex[0].color[2] = 0.0f;
 
@@ -149,11 +123,36 @@ void Game::initialize()
 
 	vertex[5].color[0] = 0.6f;
 	vertex[5].color[1] = 1.0f;
-	vertex[5].color[2] = 0.0f;*/
+	vertex[5].color[2] = 0.0f;
 
+	vertex[6].color[0] = 1.2f;
+	vertex[6].color[1] = 0.2f;
+	vertex[6].color[2] = 0.0f;
+
+	vertex[7].color[0] = 1.2f;
+	vertex[7].color[1] = 0.2f;
+	vertex[7].color[2] = 0.0f;
+
+	vertex[8].color[0] = 1.2f;
+	vertex[8].color[1] = 0.2f;
+	vertex[8].color[2] = 0.0f;
+
+	vertex[9].color[0] = 1.5f;
+	vertex[9].color[1] = 1.5f;
+	vertex[9].color[2] = 0.0f;
+
+	vertex[10].color[0] = 1.5f;
+	vertex[10].color[1] = 1.5f;
+	vertex[10].color[2] = 0.0f;
+
+	vertex[11].color[0] = 1.5f;
+	vertex[11].color[1] = 1.5f;
+	vertex[11].color[2] = 0.0f;
 
 	triangles[0] = 0;   triangles[1] = 1;   triangles[2] = 2;
 	triangles[3] = 3;   triangles[4] = 4;   triangles[5] = 5;
+	triangles[6] = 6;   triangles[7] = 7;   triangles[8] = 8;
+	triangles[9] = 9;   triangles[10] = 10;   triangles[11] = 11;
 
 	/* Create a new VBO using VBO id */
 	glGenBuffers(1, vbo);
@@ -162,12 +161,12 @@ void Game::initialize()
 	glBindBuffer(GL_ARRAY_BUFFER, vbo[0]);
 
 	/* Upload vertex data to GPU */
-	glBufferData(GL_ARRAY_BUFFER, sizeof(vertices) * 6, vertices, GL_STATIC_DRAW);
+	glBufferData(GL_ARRAY_BUFFER, sizeof(vertex) * 12, vertex, GL_STATIC_DRAW);
 	glBindBuffer(GL_ARRAY_BUFFER, 0);
 
 	glGenBuffers(1, &index);
 	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, index);
-	glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(GLubyte) * 6, triangles, GL_STATIC_DRAW);
+	glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(GLubyte) * 12, triangles, GL_STATIC_DRAW);
 	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
 }
 
@@ -198,17 +197,6 @@ void Game::update()
 	}
 
 	//Change vertex data
-	/*vertices[0].m_x += -0.0001f;
-	vertices[0].m_y += -0.0001f;
-	vertices[0].m_z += -0.0001f;
-
-	vertices[2].m_x += -0.0001f;
-	vertices[2].m_y += -0.0001f;
-	vertices[2].m_z += -0.0001f;
-
-	vertices[4].m_x += -0.0001f;
-	vertices[4].m_y += -0.0001f;
-	vertices[4].m_z += -0.0001f;*/
 
 	//cout << "Update up" << endl;
 }
@@ -226,7 +214,7 @@ void Game::render()
 
 	/*	As the data positions will be updated by the this program on the
 		CPU bind the updated data to the GPU for drawing	*/
-	glBufferData(GL_ARRAY_BUFFER, sizeof(Vertex) * 6, vertices, GL_STATIC_DRAW);
+	glBufferData(GL_ARRAY_BUFFER, sizeof(Vertex) * 12, vertex, GL_STATIC_DRAW);
 
 	glEnableClientState(GL_VERTEX_ARRAY);
 	glEnableClientState(GL_COLOR_ARRAY);
