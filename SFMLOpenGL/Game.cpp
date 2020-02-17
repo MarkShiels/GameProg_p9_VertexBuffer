@@ -74,7 +74,7 @@ void Game::initialize()
 	vertex[4].coordinate[2] = 0.0f;
 
 	vertex[5].coordinate[0] = -0.5f; 
-	vertex[5].coordinate[1] = -0.5f;  
+	vertex[5].coordinate[1] = -0.8f;  
 	vertex[5].coordinate[2] = 0.0f;
 
 	vertex[6].coordinate[0] = -0.5f;
@@ -90,7 +90,7 @@ void Game::initialize()
 	vertex[8].coordinate[2] = 0.0f;
 
 	vertex[9].coordinate[0] = 0.5f;
-	vertex[9].coordinate[1] = 0.5f;
+	vertex[9].coordinate[1] = -0.5f;
 	vertex[9].coordinate[2] = 0.0f;
 
 	vertex[10].coordinate[0] = 0.5f;
@@ -151,8 +151,8 @@ void Game::initialize()
 
 	triangles[0] = 0;   triangles[1] = 1;   triangles[2] = 2;
 	triangles[3] = 3;   triangles[4] = 4;   triangles[5] = 5;
-	triangles[6] = 6;   triangles[7] = 7;   triangles[8] = 8;
-	triangles[9] = 9;   triangles[10] = 10;   triangles[11] = 11;
+	//triangles[6] = 6;   triangles[7] = 7;   triangles[8] = 8;
+	//triangles[9] = 9;   triangles[10] = 10;   triangles[11] = 11;
 
 	/* Create a new VBO using VBO id */
 	glGenBuffers(1, vbo);
@@ -225,7 +225,7 @@ void Game::render()
 	/*	Draw Triangle from VBO	(set where to start from as VBO can contain 
 		model compoents that are and are not to be drawn )	*/
 	glVertexPointer(3, GL_FLOAT, sizeof(Vertex), (char*)NULL + 0);
-	glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_BYTE, (char*)NULL + 0);
+	glDrawElements(GL_TRIANGLES, 12, GL_UNSIGNED_BYTE, (char*)NULL + 0);
 
 	glDisableClientState(GL_VERTEX_ARRAY);
 	glDisableClientState(GL_COLOR_ARRAY);
